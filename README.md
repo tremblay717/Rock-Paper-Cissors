@@ -1,4 +1,4 @@
-# Rock-Paper-Cissors
+## Rock-Paper-Cissors
 
 This is a project from the Odin Project Fundamentals Path. They request you to code a simple version of the Rock Paper Cisors Game through the browser console using Javascript. 
 
