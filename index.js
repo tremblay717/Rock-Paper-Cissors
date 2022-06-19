@@ -30,7 +30,7 @@ function game() {
     let computerSelection = computerPlay();
 
     // This function is the one that plays against the user and returns a message following according to the results.
-    function RockPaperCissors(playerSelection, computerSelection) {
+    function playRound(playerSelection, computerSelection) {
             
         if (playerSelection === computerSelection) {
             return "Draw, Computer chose " + capitalise(computerSelection) + " !";
@@ -46,7 +46,7 @@ function game() {
     }
 
     // We display the function call in the browser console
-    console.log(RockPaperCissors(playerSelection, computerSelection));
+    console.log(playRound(playerSelection, computerSelection));
 }
            
 // As requested the function game is called 5 times 
