@@ -19,6 +19,13 @@ function game() {
         }
     }
 
+    // This small function returns a word with the first letter in uppercase to make the code cleaner
+    function capitalise(word) {
+        let firstLetter = word[0];
+        let rest = word.slice(1, word.length);
+        return firstLetter.toUpperCase() + rest.toLowerCase(); 
+    };
+
     // The function computerPlay is called to assign a random number to our computerSelection variable. 
     let computerSelection = computerPlay();
 
@@ -26,20 +33,20 @@ function game() {
     function RockPaperCissors(playerSelection, computerSelection) {
             
         if (playerSelection === computerSelection) {
-            return "Draw, Computer chose " + computerSelection[0].toUpperCase() + computerSelection.slice(1, computerSelection.length) + " !";
+            return "Draw, Computer chose " + capitalise(computerSelection) + " !";
         }
 
         else if ((playerSelection == "rock" && computerSelection == "cissors") || (playerSelection == "cissors" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "rock")) {
-            return "You win, " + playerSelection[0].toUpperCase() + playerSelection.slice(1, playerSelection.length) + " beats " + computerSelection[0].toUpperCase() + computerSelection.slice(1, computerSelection.length) + " !";
+            return "You win, " + capitalise(playerSelection) + " beats " + capitalise(computerSelection) + " !";
         }
 
         else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "cissors") || (playerSelection == "cissors" && computerSelection == "rock")) {
-            return "You lose, " + computerSelection[0].toUpperCase() + computerSelection.slice(1, computerSelection.length) + " beats " + playerSelection[0].toUpperCase() + playerSelection.slice(1, playerSelection.length) + " !";
+            return "You lose, " + capitalise(computerSelection) + " beats " + capitalise(playerSelection) + " !";
         }
     }
 
     // We display the function call in the browser console
-    console.log(console.log(RockPaperCissors(playerSelection, computerSelection)));
+    console.log(RockPaperCissors(playerSelection, computerSelection));
 }
            
 // As requested the function game is called 5 times 
@@ -48,4 +55,4 @@ do {
     game();
     i++;
 }
-while (i <= 5);           
+while (i <= 5);
