@@ -1,55 +1,79 @@
-    // This small function returns a word with the first letter in uppercase to make the code cleaner
-    function capitalise(word) {
+// This small function returns a word with the first letter in uppercase to make the code cleaner
+function capitalise(word) {
 
-        let firstLetter = word[0];
-        let rest = word.slice(1, word.length);
-        return firstLetter.toUpperCase() + rest.toLowerCase();
-      };
+    let firstLetter = word[0];
+    let rest = word.slice(1, word.length);
+    return firstLetter.toUpperCase() + rest.toLowerCase();
+  };
   
-      function game() {
+  // This function randomly selects a number from 1 to 3 assigned to a  specific value
+  function computerPlay() {
   
-        // User input that will be converted to lower case characters 
-        let playerSelection = prompt("Rock, Paper, Cissors !").toLowerCase();
+    let number = Math.floor(Math.random() * 3) + 1;
   
-        // This function randomly selects a number from 1 to 3 assigned to a  specific value
-        function computerPlay() {
+    if (number == 1) {
+      return "rock";
+    } else if (number == 2) {
+      return "paper";
+    } else {
+      return "cissors";
+    }
+  }
   
-          let number = Math.floor(Math.random() * 3) + 1;
+
+  // This function is the one that plays a single round against the computer
+  function playRound(playerSelection, computerSelection) {
   
-          if (number == 1) {
-            return "rock";
-          } else if (number == 2) {
-            return "paper";
-          } else {
-            return "cissors";
-          }
-        }
+    if (playerSelection === computerSelection) {
+      return "Draw, Computer chose " + capitalise(computerSelection) + " !";
+    } else if ((playerSelection == "rock" && computerSelection == "cissors") || (playerSelection == "cissors" && computerSelection == "paper") || (
+        playerSelection == "paper" && computerSelection == "rock")) {
+      return "You win, " + capitalise(playerSelection) + " beats " + capitalise(computerSelection) + " !";
+    } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "cissors") || (
+        playerSelection == "cissors" && computerSelection == "rock")) {
+      return "You lose, " + capitalise(computerSelection) + " beats " + capitalise(playerSelection) + " !";
+    }  
+  }
   
-        // The function computerPlay is called to assign a random value to our computerSelection variable. 
-        let computerSelection = computerPlay();
   
-        // This function is the one that plays against the user and returns a message following according to the results.
-        function playRound(playerSelection, computerSelection) {
+  function game() {
   
-          if (playerSelection === computerSelection) {
-            return "Draw, Computer chose " + capitalise(computerSelection) + " !";
-          } else if ((playerSelection == "rock" && computerSelection == "cissors") || (playerSelection == "cissors" && computerSelection == "paper") || (
-              playerSelection == "paper" && computerSelection == "rock")) {
-            return "You win, " + capitalise(playerSelection) + " beats " + capitalise(computerSelection) + " !";
-          } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "cissors") || (
-              playerSelection == "cissors" && computerSelection == "rock")) {
-            return "You lose, " + capitalise(computerSelection) + " beats " + capitalise(playerSelection) + " !";
-          }
-        }
+    let i = 1;
+    let playerScore = 0;
+    let computerScore = 0;
   
-        // We display the function call in the browser console
-        console.log(playRound(playerSelection, computerSelection));
+    do {
+  
+      let playerSelection = prompt("Rock, Paper, Cissors !").toLowerCase();
+  
+      let computerSelection = computerPlay();
+  
+      console.log(playRound(playerSelection, computerSelection));
+      if ((playerSelection == "rock" && computerSelection == "cissors") || (playerSelection == "cissors" && computerSelection == "paper") || (
+          playerSelection == "paper" && computerSelection == "rock")) {
+        playerScore += 1;
+      } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "cissors") || (
+          playerSelection == "cissors" && computerSelection == "rock")) {
+        computerScore += 1;
       }
+      console.log("Player Score: " + playerScore + ", Computer Score: " + computerScore + " .")
   
-      // As requested the function game is called 5 times 
-      let i = 1;
-      do {
-        game();
-        i++;
-      }
-      while (i <= 5);
+      i++;
+  
+    }
+
+    while (i <= 5);
+  
+    if (playerScore > computerScore) {
+      console.log("Player Won " + playerScore + " - " + computerScore)
+    } else if (computerScore > playerScore) {
+      console.log("Computer Won " + computerScore + " - " + playerScore)
+    } else {
+      console.log("Draw " + playerScore + " - " + computerScore)
+    }
+  }
+  
+  // We call the game function that we will display the game in the browser  
+  game()
+  
+  
