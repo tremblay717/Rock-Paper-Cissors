@@ -20,7 +20,6 @@ function capitalise(word) {
     }
   }
   
-
   // This function is the one that plays a single round against the computer
   function playRound(playerSelection, computerSelection) {
   
@@ -32,9 +31,8 @@ function capitalise(word) {
     } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "cissors") || (
         playerSelection == "cissors" && computerSelection == "rock")) {
       return "You lose, " + capitalise(computerSelection) + " beats " + capitalise(playerSelection) + " !";
-    }  
+    }
   }
-  
   
   function game() {
   
@@ -56,24 +54,22 @@ function capitalise(word) {
           playerSelection == "cissors" && computerSelection == "rock")) {
         computerScore += 1;
       }
-      console.log("Player Score: " + playerScore + ", Computer Score: " + computerScore + " .")
+      console.log("Player Score: " + playerScore + ", Computer Score: " + computerScore + ".")
   
       i++;
   
     }
-
+  
     while (i <= 5);
   
     if (playerScore > computerScore) {
-      console.log("Player Won " + playerScore + " - " + computerScore)
+      console.log("Player Won " + playerScore + " - " + computerScore);
     } else if (computerScore > playerScore) {
-      console.log("Computer Won " + computerScore + " - " + playerScore)
+      console.log("Computer Won " + computerScore + " - " + playerScore);
     } else {
-      console.log("Draw " + playerScore + " - " + computerScore)
+      console.log("Draw " + playerScore + " - " + computerScore);
     }
   }
   
-  // We call the game function that we will display the game in the browser  
-  game()
-  
-  
+  // We call the game function that will display the 5 rounds in the browser console  
+  game();
