@@ -54,7 +54,7 @@ function capitalise(word) {
           playerSelection == "cissors" && computerSelection == "rock")) {
         computerScore += 1;
       }
-      console.log("Player Score: " + playerScore + ", Computer Score: " + computerScore + ".")
+      console.log("Player Score: " + playerScore + ", Computer Score: " + computerScore + ".");
   
       i++;
   
