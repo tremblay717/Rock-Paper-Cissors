@@ -1,7 +1,6 @@
 ## Rock-Paper-Scissors
 
-This is a project from the Odin Project Fundamentals Path. They request you to code a simple version of the Rock Paper Cisors Game through the browser console using Javascript. 
+This is a project from the Odin Project Fundamentals Path. They request you to use JavaScript to create an interactive Rock Paper Scissors Game using DOM events.  
 
-More changes will come later on once I am more experienced in Web design and Javascript. 
 
-Project Info : https://www.theodinproject.com/lessons/foundations-rock-paper-scissors 
+Project Info : https://www.theodinproject.com/lessons/foundations-rock-paper-scissors & https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors
