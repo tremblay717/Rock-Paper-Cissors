@@ -48,7 +48,7 @@ function computerPlay() {
       computerSelection = computerPlay();
       roundNumber += 1;
       if (computerSelection == 'rock') {
-        return gameMessage.textContent = "It's a Draw, Computer chose Rock", rounds.textContent = roundNumber;
+        return gameMessage.textContent = "It's a Draw! Computer chose Rock", rounds.textContent = roundNumber;
       } else if (computerSelection == "paper") {
         computerScore += 1;
         if (computerScore == 5) {
@@ -81,7 +81,7 @@ function computerPlay() {
           return gameMessage.textContent = "You win! Paper beats Rock", pScore.textContent = playerScore, rounds.textContent = roundNumber;
         }
       } else if (computerSelection == "paper") {
-        return gameMessage.textContent = "It's a draw, Computer chose Paper", rounds.textContent = roundNumber
+        return gameMessage.textContent = "It's a Draw! Computer chose Paper", rounds.textContent = roundNumber
       } else {
         computerScore += 1;
   
@@ -108,7 +108,7 @@ function computerPlay() {
         if (computerScore == 5) {
           return gameMessage.textContent = "You lose the game! Rock beats Scissors", cScore.textContent = computerScore, rounds.textContent = roundNumber;
         } else {
-          return "You lose the game ! Rock beats Scissors", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+          return "You lose the game! Rock beats Scissors", cScore.textContent = computerScore, rounds.textContent = roundNumber;
         }
       } else if (computerSelection == "paper") {
         playerScore += 1
@@ -119,7 +119,7 @@ function computerPlay() {
           return gameMessage.textContent = "You win! Scissors beat Paper", pScore.textContent = playerScore, rounds.textContent = roundNumber;
         }
       } else {
-        return gameMessage.textContent = "It's a draw! Computer chose Scissors", rounds.textContent = roundNumber;
+        return gameMessage.textContent = "It's a Draw! Computer chose Scissors", rounds.textContent = roundNumber;
       }
     } else {
       return;
