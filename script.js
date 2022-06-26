@@ -125,21 +125,3 @@ function computerPlay() {
       return;
     }
   }
-  
-  if (pScore.textContent == 5 || cScore.textContent == 5) {
-    rock.endPropagation();
-    paper.endPropagation();
-    scissors.endPropagation();
-  };
-  
-  
-  // if (playerScore == 5 || computerScore == 5) {
-  //     playerScore = 0;
-  //     computerScore = 0;
-  //     pScore.textContent = playerScore;
-  //     cScore.textContent = computerScore;
-  //     gameMessage.textContent = "Start a new game";
-  //     roundNumber = 0;
-  //     rounds.textContent = roundNumber;
-  
-  // }
