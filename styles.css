@@ -16,13 +16,18 @@ body {
     font-size: 24px;
     padding-bottom: 50px;
     text-align: center;
+    align-items: center;
+
     color: aliceblue;
 }
 
 .box_container {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-family: inherit;
+    gap: 15px;
 }
 
 .count {
@@ -38,6 +43,7 @@ body {
 .button {
     width: 200px;
     height: 200px;
+    align-content: center;
     align-items: center;
     border-width: 2px;
     border-radius: 5px;
@@ -60,6 +66,21 @@ body {
     text-align: center;
     font-size: 20px;
 }
+
+.gameMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 20px;
+    margin-left: 32.75%;
+    font-family: inherit;
+    margin-right: 32.75%;
+    color: aliceblue;
+    text-align: center;
+}
+
+
 
 .roundsBox {
 
@@ -101,6 +122,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 5%;
     bottom: 0;
     left: 0;
     right: 0;
