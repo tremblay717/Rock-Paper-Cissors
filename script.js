@@ -1,75 +1,86 @@
-// This small function returns a word with the first letter in uppercase to make the code cleaner
-function capitalise(word) {
+// // This small function returns a word with the first letter in uppercase to make the code cleaner
+// function capitalise(word) {
 
-    let firstLetter = word[0];
-    let rest = word.slice(1, word.length);
-    return firstLetter.toUpperCase() + rest.toLowerCase();
-  };
+//     let firstLetter = word[0];
+//     let rest = word.slice(1, word.length);
+//     return firstLetter.toUpperCase() + rest.toLowerCase();
+//   };
   
-  // This function randomly selects a number from 1 to 3 assigned to a  specific value
-  function computerPlay() {
+//   // This function randomly selects a number from 1 to 3 assigned to a  specific value
+//   function computerPlay() {
   
-    let number = Math.floor(Math.random() * 3) + 1;
+//     let number = Math.floor(Math.random() * 3) + 1;
   
-    if (number == 1) {
-      return "rock";
-    } else if (number == 2) {
-      return "paper";
-    } else {
-      return "cissors";
-    }
-  }
+//     if (number == 1) {
+//       return "rock";
+//     } else if (number == 2) {
+//       return "paper";
+//     } else {
+//       return "cissors";
+//     }
+//   }
   
-  // This function is the one that plays a single round against the computer
-  function playRound(playerSelection, computerSelection) {
+//   // This function is the one that plays a single round against the computer
+//   function playRound(playerSelection, computerSelection) {
   
-    if (playerSelection === computerSelection) {
-      return "Draw, Computer chose " + capitalise(computerSelection) + " !";
-    } else if ((playerSelection == "rock" && computerSelection == "cissors") || (playerSelection == "cissors" && computerSelection == "paper") || (
-        playerSelection == "paper" && computerSelection == "rock")) {
-      return "You win, " + capitalise(playerSelection) + " beats " + capitalise(computerSelection) + " !";
-    } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "cissors") || (
-        playerSelection == "cissors" && computerSelection == "rock")) {
-      return "You lose, " + capitalise(computerSelection) + " beats " + capitalise(playerSelection) + " !";
-    }
-  }
+//     if (playerSelection === computerSelection) {
+//       return "Draw, Computer chose " + capitalise(computerSelection) + " !";
+//     } else if ((playerSelection == "rock" && computerSelection == "cissors") || (playerSelection == "cissors" && computerSelection == "paper") || (
+//         playerSelection == "paper" && computerSelection == "rock")) {
+//       return "You win, " + capitalise(playerSelection) + " beats " + capitalise(computerSelection) + " !";
+//     } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "cissors") || (
+//         playerSelection == "cissors" && computerSelection == "rock")) {
+//       return "You lose, " + capitalise(computerSelection) + " beats " + capitalise(playerSelection) + " !";
+//     }
+//   }
   
-  function game() {
+//   function game() {
   
-    let i = 1;
-    let playerScore = 0;
-    let computerScore = 0;
+//     let i = 1;
+//     let playerScore = 0;
+//     let computerScore = 0;
   
-    do {
+//     do {
   
-      let playerSelection = prompt("Rock, Paper, Cissors !").toLowerCase();
+//       let playerSelection = prompt("Rock, Paper, Cissors !").toLowerCase();
   
-      let computerSelection = computerPlay();
+//       let computerSelection = computerPlay();
   
-      console.log(playRound(playerSelection, computerSelection));
-      if ((playerSelection == "rock" && computerSelection == "cissors") || (playerSelection == "cissors" && computerSelection == "paper") || (
-          playerSelection == "paper" && computerSelection == "rock")) {
-        playerScore += 1;
-      } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "cissors") || (
-          playerSelection == "cissors" && computerSelection == "rock")) {
-        computerScore += 1;
-      }
-      console.log("Player Score: " + playerScore + ", Computer Score: " + computerScore + ".");
+//       console.log(playRound(playerSelection, computerSelection));
+//       if ((playerSelection == "rock" && computerSelection == "cissors") || (playerSelection == "cissors" && computerSelection == "paper") || (
+//           playerSelection == "paper" && computerSelection == "rock")) {
+//         playerScore += 1;
+//       } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "cissors") || (
+//           playerSelection == "cissors" && computerSelection == "rock")) {
+//         computerScore += 1;
+//       }
+//       console.log("Player Score: " + playerScore + ", Computer Score: " + computerScore + ".");
   
-      i++;
+//       i++;
   
-    }
+//     }
   
-    while (i <= 5);
+//     while (i <= 5);
   
-    if (playerScore > computerScore) {
-      console.log("Player Won " + playerScore + " - " + computerScore);
-    } else if (computerScore > playerScore) {
-      console.log("Computer Won " + computerScore + " - " + playerScore);
-    } else {
-      console.log("Draw " + playerScore + " - " + computerScore);
-    }
-  }
+//     if (playerScore > computerScore) {
+//       console.log("Player Won " + playerScore + " - " + computerScore);
+//     } else if (computerScore > playerScore) {
+//       console.log("Computer Won " + computerScore + " - " + playerScore);
+//     } else {
+//       console.log("Draw " + playerScore + " - " + computerScore);
+//     }
+//   }
   
-  // We call the game function that will display the 5 rounds in the browser console  
-  game();
+//   // We call the game function that will display the 5 rounds in the browser console  
+//   game();
+
+let playerScore = document.querySelector("#playerScore");
+playerScore.classList.add('content')
+playerScore.textContent = 0;
+playerScore.style.fontSize= '24px';
+
+
+let computerScore = document.querySelector("#computerScore");
+computerScore.classList.add('content')
+computerScore.textContent = 0;
+computerScore.style.fontSize= '24px';
