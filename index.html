@@ -14,20 +14,20 @@
         <h1>Rock Paper Scissors</h1>
     </div>
     <div class="explanation">
-        <p>Click an icon below to play a game of 5 rounds</p>
+        <p>Click an icon below to start a game of 5 rounds</p>
     </div>
     <div class="box_container">
         <div class="count">
             <h3>Player Score</h3>
             <p id="playerScore"></p>
         </div>
-        <button class="button">
+        <button class="button" id="rock">
             <div class="img"><img src="images/rock_1faa8.png"></div>
         </button>
-        <button class="button">
+        <button class="button" id="paper">
             <div class="img"><img src="images/paper.png"></div>
         </button>
-        <button class="button">
+        <button class="button" id="scissors">
             <div class="img"><img src="images/scissors_2702-fe0f.png"></div>
         </button>
         <div class="count">
@@ -37,10 +37,11 @@
 
 
     </div>
-
-
-
-
+    <div class="gameMessage">
+        <p></p>
+    </div>
+    <div class="resetBox"><button class="resetButton" id="resetButton">Reset</button></div>
+    <div class="footer">Christophe Tremblay © 2022</div>
 
     <script src="script.js"></script>
 </body>
