@@ -44,76 +44,93 @@ function computerPlay() {
   
   var rock = document.querySelector('#rock')
   rock.onclick = function() {
-    computerSelection = computerPlay();
-    roundNumber += 1;
-    if (computerSelection == 'rock') {
-      return gameMessage.textContent = "It's a Draw, Computer chose Rock", rounds.textContent = roundNumber;
-    } else if (computerSelection == "paper") {
-      computerScore += 1;
-      if (computerScore == 5) {
-        return gameMessage.textContent = "Game Over ! You lose, Paper beats Rock", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+    if (playerScore < 5 && computerScore < 5) {
+      computerSelection = computerPlay();
+      roundNumber += 1;
+      if (computerSelection == 'rock') {
+        return gameMessage.textContent = "It's a Draw, Computer chose Rock", rounds.textContent = roundNumber;
+      } else if (computerSelection == "paper") {
+        computerScore += 1;
+        if (computerScore == 5) {
+          return gameMessage.textContent = "Game Over ! You lose, Paper beats Rock", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+        } else {
+          return gameMessage.textContent = "You lose, Paper beats Rock", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+        }
       } else {
-        return gameMessage.textContent = "You lose, Paper beats Rock", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+        playerScore += 1
+        if (playerScore == 5) {
+          return gameMessage.textContent = "You win the game! Rock beats Scissors", pScore.textContent = playerScore, rounds.textContent = roundNumber;
+        }
+        return gameMessage.textContent = "You win! Rock beats Scissors", pScore.textContent = playerScore, rounds.textContent = roundNumber;
       }
     } else {
-      playerScore += 1
-      if (playerScore == 5) {
-        return gameMessage.textContent = "You win the game! Rock beats Scissors", pScore.textContent = playerScore, rounds.textContent = roundNumber;
-      }
-      return gameMessage.textContent = "You win! Rock beats Scissors", pScore.textContent = playerScore, rounds.textContent = roundNumber;
+      return;
     }
   }
   
   var paper = document.querySelector("#paper")
   paper.onclick = function() {
-    roundNumber += 1;
-    computerSelection = computerPlay();
-    if (computerSelection == 'rock') {
-      playerScore += 1;
-      if (playerScore == 5) {
-        return gameMessage.textContent = "You win the Game! Paper beats Rock", pScore.textContent = playerScore, rounds.textContent = roundNumber;
+    if (playerScore < 5 && computerScore < 5) {
+      roundNumber += 1;
+      computerSelection = computerPlay();
+      if (computerSelection == 'rock') {
+        playerScore += 1;
+        if (playerScore == 5) {
+          return gameMessage.textContent = "You win the Game! Paper beats Rock", pScore.textContent = playerScore, rounds.textContent = roundNumber;
+        } else {
+          return gameMessage.textContent = "You win! Paper beats Rock", pScore.textContent = playerScore, rounds.textContent = roundNumber;
+        }
+      } else if (computerSelection == "paper") {
+        return gameMessage.textContent = "It's a draw, Computer chose Paper", rounds.textContent = roundNumber
       } else {
-        return gameMessage.textContent = "You win! Paper beats Rock", pScore.textContent = playerScore, rounds.textContent = roundNumber;
-      }
-    } else if (computerSelection == "paper") {
-      return gameMessage.textContent = "It's a draw, Computer chose Paper", rounds.textContent = roundNumber
-    } else {
-      computerScore += 1;
+        computerScore += 1;
   
-      if (computerScore == 5) {
-        return gameMessage.textContent = "You lose the game! Scissors beat Paper", cScore.textContent = computerScore, rounds.textContent = roundNumber;
-      } else {
-        gameMessage.textContent = "You lose! Scissors beat Paper", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+        if (computerScore == 5) {
+          return gameMessage.textContent = "You lose the game! Scissors beat Paper", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+        } else {
+          gameMessage.textContent = "You lose! Scissors beat Paper", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+        }
       }
+    } else {
+      return;
     }
   }
   
   var scissors = document.querySelector("#scissors")
-  scissors.onclick = function() {
   
-    roundNumber += 1;
-    computerSelection = computerPlay();
-    if (computerSelection == 'rock') {
-      computerScore += 1
-      if (computerScore == 5) {
-        return gameMessage.textContent = "You lose the game! Rock beats Scissors", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+  
+  scissors.onclick = function() {
+    if (playerScore < 5 & computerScore < 5) {
+      roundNumber += 1;
+      computerSelection = computerPlay();
+      if (computerSelection == 'rock') {
+        computerScore += 1
+        if (computerScore == 5) {
+          return gameMessage.textContent = "You lose the game! Rock beats Scissors", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+        } else {
+          return "You lose the game ! Rock beats Scissors", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+        }
+      } else if (computerSelection == "paper") {
+        playerScore += 1
+        if (playerScore == 5) {
+          return gameMessage.textContent = "You win the game! Scissors beat Paper", pScore.textContent = playerScore, rounds.textContent = roundNumber,
+          scissors;
+        } else {
+          return gameMessage.textContent = "You win! Scissors beat Paper", pScore.textContent = playerScore, rounds.textContent = roundNumber;
+        }
       } else {
-        return "You lose the game ! Rock beats Scissors", cScore.textContent = computerScore, rounds.textContent = roundNumber, scissors.endPropagation();
-      }
-    } else if (computerSelection == "paper") {
-      playerScore += 1
-      if (playerScore == 5) {
-        return gameMessage.textContent = "You win the game! Scissors beat Paper", pScore.textContent = playerScore, rounds.textContent = roundNumber, scissors
-          .endPropagation();
-      } else {
-        return gameMessage.textContent = "You win! Scissors beat Paper", pScore.textContent = playerScore, rounds.textContent = roundNumber;
+        return gameMessage.textContent = "It's a draw! Computer chose Scissors", rounds.textContent = roundNumber;
       }
     } else {
-      return gameMessage.textContent = "It's a draw! Computer chose Scissors", rounds.textContent = roundNumber;
+      return;
     }
   }
   
-  if (pScore.textContent == 5 || cScore.textContent == 5) {}
+  if (pScore.textContent == 5 || cScore.textContent == 5) {
+    rock.endPropagation();
+    paper.endPropagation();
+    scissors.endPropagation();
+  };
   
   
   // if (playerScore == 5 || computerScore == 5) {

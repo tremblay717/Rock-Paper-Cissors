@@ -44,7 +44,7 @@ body {
     background-color: white;
     transition: 0.5;
     flex-shrink: 2;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .img {
@@ -61,14 +61,25 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
     margin-top: 20px;
     margin-left: 32.75%;
     margin-right: 32.75%;
-    background-color: beige;
+    color: aliceblue;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
+}
+
+.roundsBox {
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-width: 2px;
+    border-radius: 5px;
+    text-align: center;
+    color: aliceblue;
+    font-size: 20px;
+
 }
 
 .resetBox {
@@ -76,12 +87,9 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    margin-top: 20px;
-    margin-bottom: 20px;
     margin-left: 32.75%;
     margin-right: 32.75%;
+    padding-bottom: 9.75%;
 }
 
 .resetButton {
@@ -91,13 +99,12 @@ body {
     align-items: center;
     border-width: 2px;
     border-radius: 5px;
-    background-color:gold;
+    background-color: gold;
     flex-shrink: 2;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .footer {
-    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
