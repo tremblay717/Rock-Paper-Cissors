@@ -108,7 +108,7 @@ scissors.onclick = function () {
             if (computerScore == 5) {
                 return gameMessage.textContent = "You lose the game! Rock beats Scissors", cScore.textContent = computerScore, rounds.textContent = roundNumber;
             } else {
-                return "You lose the game! Rock beats Scissors", cScore.textContent = computerScore, rounds.textContent = roundNumber;
+                return "You lose ! Rock beats Scissors", cScore.textContent = computerScore, rounds.textContent = roundNumber;
             }
         } else if (computerSelection == "paper") {
             playerScore += 1
